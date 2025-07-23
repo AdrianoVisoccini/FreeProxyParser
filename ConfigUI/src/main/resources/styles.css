@@ -1,0 +1,89 @@
+.tab-pane{
+    -fx-background-color: #58595b;
+}
+
+.choice-box{
+    -fx-background-color: #58595b;
+    -fx-border-color: #E5680D;
+    -fx-border-radius: 7;
+    -fx-text-fill: white;
+    -fx-font-family: Open Sans;
+    -fx-font-size: 12;
+}
+
+.text-field{
+    -fx-background-color: #58595b;
+    -fx-border-color: #9C9C9C;
+    -fx-border-radius: 7;
+    -fx-text-fill: #9C9C9C;
+    -fx-font-family: Open Sans;
+    -fx-font-size: 12;
+}
+
+.label{
+    -fx-text-fill: white;
+    -fx-font-family: Open Sans;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+}
+
+.vbox{
+    -fx-background-color: #4b4a4c;
+}
+
+.vbox-button{
+    -fx-max-width: Infinity;
+    -fx-pref-height: 40;
+    -fx-background-color: #58595b;
+    -fx-text-fill: white;
+    -fx-font-family: Open Sans;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+    -fx-border-color: #4C4C4C;
+}
+.vbox-button-active{
+    -fx-max-width: Infinity;
+    -fx-pref-height: 40;
+    -fx-background-color: #58445b;
+    -fx-text-fill: white;
+    -fx-font-family: Open Sans;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+    -fx-border-color: #4C4C4C;
+}
+.vbox-button:hover {
+    -fx-background-color: #E5680D;
+    -fx-text-fill: black;
+    -fx-cursor: hand;
+}
+
+.vbox-button:pressed {
+    -fx-background-color: #B24F00;
+    -fx-text-fill: white;
+}
+
+.scroll-bar {
+    -fx-background-color: #4C4C4C;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent; /* Фон самой полосы прокрутки */
+}
+
+/* Стиль для трека (полоса, по которой движется thumb) */
+.scroll-bar .track {
+    -fx-background-color: #333333; /* Цвет трека */
+    -fx-border-radius: 5px;
+}
+
+/* Стиль для thumb (движущаяся часть полосы прокрутки) */
+.scroll-bar .thumb {
+    -fx-background-color: #E5680D; /* Цвет thumb */
+    -fx-background-insets: 2;      /* Внутренние отступы */
+    -fx-background-radius: 5px;    /* Скругление углов */
+}
+
+.grid-pane{
+    -fx-background-color: #58595b;
+    -fx-padding: 20;
+}

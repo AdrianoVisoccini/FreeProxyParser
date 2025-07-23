@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UiController">
+
+    <!-- Левая панель с кнопками (остается без изменений) -->
+    <left>
+        <VBox maxHeight="800.0" prefWidth="200.0" styleClass="vbox">
+            <children>
+                <Button fx:id="buttonWebserver" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="200.0" styleClass="vbox-button" text="Настройки вебсервера" />
+                <Button fx:id="buttonBackup" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="настройки резервного копирования" wrapText="true" />
+                <Button fx:id="buttonUser" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="Настройки пользователя" />
+                <Button fx:id="buttonMemory" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="Настройки памяти" />
+                <Button fx:id="buttonDatabase" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="Настройки базы данных" />
+                <Button fx:id="buttonAllService" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="Переменные окружения" />
+                <Button fx:id="buttonCa" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="Переменные CertificateAuthority" />
+                <Button fx:id="buttonPublisher" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="Переменные Publisher" />
+                <Button fx:id="buttonEventDilivery" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="Переменные Event-dilevery" />
+                <Button fx:id="buttonValidation" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="Переменные ValidationAuthority" />
+                <Button fx:id="buttonLogs" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="Переменные logs" />
+                <Button fx:id="buttonSecurity" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="Переменные Security" />
+                <Button fx:id="buttonGateway" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="Переменные Api-gateway" />
+                <Button fx:id="buttonSubjects" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="Переменные Subjects" />
+                <Button fx:id="buttonScripts" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="Скрипты" />
+                <Button fx:id="buttonSettings" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="vbox-button" text="переменные Settings" />
+            </children>
+        </VBox>
+    </left>
+   <top>
+      <Pane prefHeight="60.0" prefWidth="200.0" style="-fx-border-radius: 5;" styleClass="tab-pane" stylesheets="@styles.css" BorderPane.alignment="CENTER" />
+   </top>
+   <right>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="640.0" maxWidth="800.0" prefWidth="800.0" style="-fx-background-color: #4b4a4c;" vbarPolicy="AS_NEEDED" BorderPane.alignment="CENTER">
+            <content>
+                <StackPane fx:id="contentStack" styleClass="tab-pane" stylesheets="@styles.css">
+               <GridPane fx:id="backupConfigPane" hgap="15" maxHeight="640" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true" StackPane.alignment="TOP_CENTER">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" minWidth="150" prefWidth="200" />
+                     <ColumnConstraints fillWidth="true" hgrow="ALWAYS" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="backup_path=" GridPane.rowIndex="2" />
+                     <Label styleClass="section-label" text="logs_base=" GridPane.rowIndex="4" />
+                     <TextField fx:id="logsBAseField" promptText="Enter port..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <Label styleClass="section-label" text="archive_path=" GridPane.rowIndex="6" />
+                     <TextField fx:id="archivePathField" promptText="Enter username..." GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                     <Label fx:id="longlabel1" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="559.0" style="-fx-font-size: 24;" text="Настройки резервного копирования" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="18.0" prefWidth="558.0" text="Путь до резервных копий:" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                     <Label prefHeight="18.0" prefWidth="575.0" text="Путь хранения лог-файлов:" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                     <Label text="certificates_ssl_path=" GridPane.rowIndex="8" />
+                     <Label text="certificates_account_path=" GridPane.rowIndex="10" />
+                     <TextField fx:id="certificaeteSslPath" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                     <TextField fx:id="backupPathField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     <Label text="Путь хранения архива журнала событий" GridPane.rowIndex="5" />
+                     <Label text="Путь хранения контейнера, сертификата и ключа web-сервера, а также цепочек сертификатов разрешенных издателей" GridPane.rowIndex="7" />
+                     <Label text="Путь хранения контейнера сертификата администратора инициализации" GridPane.rowIndex="9" />
+                     <TextField fx:id="certificatesAccountPath" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  </children>
+               </GridPane>
+               <GridPane fx:id="userConfigPane" hgap="15" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" minWidth="150" prefWidth="200" />
+                     <ColumnConstraints fillWidth="true" hgrow="ALWAYS" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="aeca_user=" GridPane.rowIndex="2" />
+                     <Label styleClass="section-label" text="aeca_group=" GridPane.rowIndex="4" />
+                     <Label fx:id="longlabel11" contentDisplay="CENTER" prefHeight="18.0" prefWidth="559.0" style="-fx-font-size: 24;" text="Настройки пользователя" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="18.0" prefWidth="558.0" text="Имя пользователя:" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                     <Label prefHeight="18.0" prefWidth="575.0" text="Группа:" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                     <TextField fx:id="aecaGroupField" promptText="Enter port..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <TextField fx:id="aecaUserField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  </children>
+               </GridPane>
+               <GridPane fx:id="memoryConfigPane" hgap="15" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" minWidth="150" prefWidth="200" />
+                     <ColumnConstraints fillWidth="true" hgrow="ALWAYS" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="memory=" GridPane.rowIndex="2" />
+                     <Label styleClass="section-label" text="enable_gc_diagnostic=" GridPane.rowIndex="4" />
+                     <Label fx:id="longlabel111" contentDisplay="CENTER" prefHeight="18.0" prefWidth="559.0" style="-fx-font-size: 24;" text="Настройки памти" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="18.0" prefWidth="558.0" text="Объем выделяемой памяти (значение в МБ)" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                     <TextField fx:id="memoryField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     <ChoiceBox fx:id="enableGcDiagnositcsChoiseBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <Label text="enable_heap_dump=" GridPane.rowIndex="6" />
+                     <ChoiceBox fx:id="enableHeapDumpChoiseBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  </children>
+               </GridPane>
+               <GridPane fx:id="aecaConfigPane" hgap="15" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" minWidth="150" prefWidth="200" />
+                     <ColumnConstraints fillWidth="true" hgrow="ALWAYS" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="http_port=" GridPane.rowIndex="2" />
+                     <Label styleClass="section-label" text="https_port=" GridPane.rowIndex="4" />
+                     <TextField fx:id="httpsPortField" promptText="Enter port..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <Label fx:id="longlabel112" contentDisplay="CENTER" prefHeight="18.0" prefWidth="559.0" style="-fx-font-size: 24;" text="Конфигурация aeca-ca" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="httpPortField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     <Label text="hostname=" GridPane.rowIndex="6" />
+                     <TextField fx:id="hostnameField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  </children>
+               </GridPane>
+               <GridPane fx:id="publisherEnvPane" hgap="15" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" maxWidth="272.00001525878906" minWidth="150.0" prefWidth="265.6000518798828" />
+                     <ColumnConstraints hgrow="ALWAYS" maxWidth="339.8000122070312" minWidth="272.5999847412109" prefWidth="278.99994812011715" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="crl_scheduler=" GridPane.rowIndex="3" />
+                     <Label prefHeight="18.0" prefWidth="564.0" styleClass="section-label" text="#CRON выражение, по которому очищаются очереди службы выпуска CRL" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                     <Label styleClass="section-label" text="crl_clean_queues=" GridPane.rowIndex="7" />
+                     <Label fx:id="longlabel211" contentDisplay="CENTER" prefHeight="73.0" prefWidth="559.0" style="-fx-font-size: 18;" text="Переменные окружения, используемые publisher-service" wrapText="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="18.0" prefWidth="557.0" text="CRON выражение, по которому запускается служба выпуска CRL" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                     <TextField fx:id="crlSchedulerField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     <TextField fx:id="crlCleanQueuesField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  </children>
+               </GridPane>
+               <GridPane fx:id="certificateAuthorityEnvPane" hgap="15" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" maxWidth="272.00001525878906" minWidth="150.0" prefWidth="265.6000518798828" />
+                     <ColumnConstraints hgrow="ALWAYS" maxWidth="339.8000122070312" minWidth="272.5999847412109" prefWidth="278.99994812011715" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="pkcs12_key_protection_algorithm=" GridPane.rowIndex="3" />
+                     <Label prefHeight="18.0" prefWidth="564.0" styleClass="section-label" text="Алгоритм хеширования MAC контейнера PKCS12" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                     <Label styleClass="section-label" text="loggingpkcs12_mac_protection_algorithm=" GridPane.rowIndex="7" />
+                     <Label fx:id="longlabel21" contentDisplay="CENTER" prefHeight="73.0" prefWidth="559.0" style="-fx-font-size: 18;" text="Переменные окружения, используемые certificate-authority-service" wrapText="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="35.0" prefWidth="560.0" text="Алгоритм хеширования для сертификата контейнера PKCS12" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+                     <Label text="pkcs12_certificate_protection_algorithm=" GridPane.rowIndex="13" />
+                     <Label prefHeight="18.0" prefWidth="557.0" text="Алгоритм хеширования для ключа контейнера PKCS12" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                     <ChoiceBox fx:id="pkcs12KeyProtectionAlgorithmChoiceBox" prefHeight="27.0" prefWidth="341.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     <ChoiceBox fx:id="loggingPkcs12MacProtectionAlgorithmChoiceBox" prefHeight="27.0" prefWidth="278.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                     <ChoiceBox fx:id="pkcs12certificateProtectionAlgorithmChoiceBox" prefHeight="27.0" prefWidth="273.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  </children>
+               </GridPane>
+               <GridPane fx:id="validationAuthorityEnvPane" hgap="15" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" maxWidth="272.00001525878906" minWidth="150.0" prefWidth="265.6000518798828" />
+                     <ColumnConstraints hgrow="ALWAYS" maxWidth="339.8000122070312" minWidth="272.5999847412109" prefWidth="278.99994812011715" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+<!--                     <RowConstraints maxHeight="16.800012207031273" minHeight="12.000024414062523" prefHeight="12.000024414062523" />-->
+<!--                     <RowConstraints maxHeight="16.800012207031273" minHeight="12.000024414062523" prefHeight="12.000024414062523" />-->
+<!--                     <RowConstraints maxHeight="5.5999755859375" minHeight="0.0" prefHeight="5.5999755859375" />-->
+<!--                     <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />-->
+<!--                     <RowConstraints />-->
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="aeca_va_port=" GridPane.rowIndex="4" />
+                     <Label prefHeight="18.0" prefWidth="564.0" styleClass="section-label" text="Порт, на котором запущен AECA VA - CDP" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                     <Label styleClass="section-label" text="aeca_cdp_port=" GridPane.rowIndex="8" />
+                     <Label fx:id="longlabel2111" contentDisplay="CENTER" prefHeight="67.0" prefWidth="561.0" style="-fx-font-size: 18;" text="Переменные окружения, используемые validation-authority-service" wrapText="true" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="18.0" prefWidth="557.0" text="Порт, на котором запущен AECA VA" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                     <TextField fx:id="aecaVaPortField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <TextField fx:id="aecaCdpProtField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                     <Label prefHeight="18.0" prefWidth="564.0" styleClass="section-label" text="Шаблон URL точки публикации CRL" GridPane.rowIndex="10" />
+                     <TextField fx:id="aecaCrlPublishPointPattern" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                     <Label styleClass="section-label" text="aeca_crl_publish_point_pattern=" GridPane.rowIndex="12" />
+                     <Label prefHeight="18.0" prefWidth="564.0" styleClass="section-label" text="Шаблон URL точки распространения CRL" GridPane.rowIndex="13" />
+                     <TextField fx:id="aecaCrlDistributionPointPatternField" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                     <Label styleClass="section-label" text="aeca_crl_distribution_point_pattern=" GridPane.rowIndex="15" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="Шаблон URL точки распространения Delta CRL" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="17" />
+                     <TextField fx:id="aecaDeltaCrlDistributionPointPatternField" GridPane.columnIndex="1" GridPane.rowIndex="20" />
+                     <Label styleClass="section-label" text="aeca_delta_crl_distribution_point_pattern=" GridPane.rowIndex="20" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="Шаблон URL точки публикации AIA" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="22" />
+                     <TextField fx:id="aecaAiaPublishPointPatternField" GridPane.columnIndex="1" GridPane.rowIndex="24" />
+                     <Label styleClass="section-label" text="aeca_aia_publish_point_pattern=" GridPane.rowIndex="24" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="Шаблон URL точки распространения AIA" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="25" />
+                     <TextField fx:id="aecaAiaDistributionPointPatternField" GridPane.columnIndex="1" GridPane.rowIndex="27" />
+                     <Label styleClass="section-label" text="aeca_aia_distribution_point_pattern=" GridPane.rowIndex="27" />
+                     <Label prefHeight="18.0" prefWidth="564.0" text="Шаблон URL сервиса OCSP" GridPane.columnSpan="2" GridPane.rowIndex="29" />
+                     <Label text="aeca_ocsp_pattern=" GridPane.rowIndex="31" />
+                     <TextField fx:id="aecaOcspPatternField" GridPane.columnIndex="1" GridPane.rowIndex="31" />
+                  </children>
+               </GridPane>
+               <GridPane fx:id="eventDeliveryEnvPane" hgap="15" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" maxWidth="272.00001525878906" minWidth="150.0" prefWidth="265.6000518798828" />
+                     <ColumnConstraints hgrow="ALWAYS" maxWidth="339.8000122070312" minWidth="272.5999847412109" prefWidth="278.99994812011715" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints maxHeight="16.800012207031273" minHeight="12.000024414062523" prefHeight="12.000024414062523" />
+                     <RowConstraints maxHeight="16.800012207031273" minHeight="12.000024414062523" prefHeight="12.000024414062523" />
+                     <RowConstraints maxHeight="5.5999755859375" minHeight="0.0" prefHeight="5.5999755859375" />
+                     <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="email_host=" GridPane.rowIndex="3" />
+                     <Label prefHeight="18.0" prefWidth="564.0" styleClass="section-label" text="Порт почтового сервера" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                     <Label styleClass="section-label" text="email_port=" GridPane.rowIndex="7" />
+                     <Label fx:id="longlabel21111" contentDisplay="CENTER" prefHeight="144.0" prefWidth="559.0" style="-fx-font-size: 18;" text="Переменные окружения, используемые event-delivery-service" wrapText="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="18.0" prefWidth="557.0" text="Хост почтового сервера" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                     <TextField fx:id="emailHostField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     <TextField fx:id="emailPortField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                     <Label prefHeight="18.0" prefWidth="564.0" styleClass="section-label" text="Логин пользователя" GridPane.rowIndex="9" />
+                     <TextField fx:id="emailLoginField" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                     <Label styleClass="section-label" text="email_login=" GridPane.rowIndex="11" />
+                     <Label prefHeight="18.0" prefWidth="564.0" styleClass="section-label" text="Пароль пользователя" GridPane.rowIndex="12" />
+                     <TextField fx:id="emailPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                     <Label styleClass="section-label" text="email_password=" GridPane.rowIndex="14" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="Почтовый адрес, &quot;с которого отправлено сообщение&quot;. Может не работать." wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="16" />
+                     <TextField fx:id="emailFromField" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+                     <Label styleClass="section-label" text="email_from=" GridPane.rowIndex="19" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="Google проставляет логинemail_from='no_reply@aeca.ru'" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="17" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="CRON для запуска метода отправки почтовых уведомлений" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="21" />
+                     <TextField fx:id="emailScheduleField" GridPane.columnIndex="1" GridPane.rowIndex="23" />
+                     <Label styleClass="section-label" text="email_schedule=" GridPane.rowIndex="23" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="Флаг отправки почтовых уведомлений, если выкл. то сообщения не отправляются" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="24" />
+                     <Label styleClass="section-label" text="email_enabled=" GridPane.rowIndex="25" />
+                     <ChoiceBox fx:id="emailEnabledChoiseBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="25" />
+                     <Label prefHeight="18.0" prefWidth="564.0" text="Протокол подключения к почтовому серверу" GridPane.columnSpan="2" GridPane.rowIndex="28" />
+                     <Label text="email_protocol=" GridPane.rowIndex="30" />
+                     <ChoiceBox fx:id="emailProtocolChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="30" />
+                     <Label text="Флаг: использование SMTP-авторизации" GridPane.rowIndex="31" />
+                     <Label text="email_smtp_auth=" GridPane.rowIndex="32" />
+                     <ChoiceBox fx:id="emailSmtpAuthChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="32" />
+                     <Label prefHeight="18.0" prefWidth="562.0" text="Флаг: использование диретивы start tls при подключении к почтовому серверу" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="33" />
+                     <Label text="email_start_tls=" GridPane.rowIndex="34" />
+                     <ChoiceBox fx:id="emailStartTlsChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="34" />
+                  </children>
+               </GridPane>
+               <GridPane fx:id="settingsEnvPane" hgap="15" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" maxWidth="272.00001525878906" minWidth="150.0" prefWidth="265.6000518798828" />
+                     <ColumnConstraints hgrow="ALWAYS" maxWidth="339.8000122070312" minWidth="272.5999847412109" prefWidth="278.99994812011715" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="initial_cryptography_provider=" GridPane.rowIndex="4" />
+                     <Label prefHeight="38.0" prefWidth="561.0" styleClass="section-label" text="Алгоритм ключа (используется для технологического ЦС и сертификатов веб-сервера и администратора инициализации)" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                     <Label styleClass="section-label" text="initial_cryptography_key_algorithm=" GridPane.rowIndex="8" />
+                     <Label fx:id="longlabel21112" contentDisplay="CENTER" prefHeight="54.0" prefWidth="561.0" style="-fx-font-size: 18;" text="Переменные окружения, используемые settings-service" wrapText="true" GridPane.columnSpan="2">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="48.0" prefWidth="558.0" text="Криптопровайдер (используется для технологического ЦС и сертификатов веб-сервера и администратора инициализации)" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                     <Label prefHeight="50.0" prefWidth="561.0" styleClass="section-label" text="Длина ключа (используется для технологического ЦС и сертификатов веб-сервера и администратора инициализации)" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+                     <Label styleClass="section-label" text="initial_cryptography_key_bits=" GridPane.rowIndex="12" />
+                     <Label prefHeight="18.0" prefWidth="564.0" styleClass="section-label" text="Хеш алгоритм (используется для технологического ЦС)" GridPane.columnSpan="2" GridPane.rowIndex="14" />
+                     <Label styleClass="section-label" text="initial_cryptography_hash_algorithm=" GridPane.rowIndex="16" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="CN сертификата технологического ЦС" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="18" />
+                     <TextField fx:id="initialCaCommonNameField" GridPane.columnIndex="1" GridPane.rowIndex="21" />
+                     <Label styleClass="section-label" text="initial_ca_common_name=" GridPane.rowIndex="21" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="Имя учетной записи администратора инициализации" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="23" />
+                     <TextField fx:id="initialAdminPrincipalField" GridPane.columnIndex="1" GridPane.rowIndex="25" />
+                     <Label styleClass="section-label" text="initial_admin_principal=" GridPane.rowIndex="25" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="Пароль от pkcs12 контейнера сертификата администратора инициализации" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="26" />
+                     <TextField fx:id="initialClientPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="28" />
+                     <Label styleClass="section-label" text="initial_client_password=" GridPane.rowIndex="28" />
+                     <Label prefHeight="18.0" prefWidth="564.0" text="Пароль от pkcs12 контейнера сертификата Web-сервера" GridPane.columnSpan="2" GridPane.rowIndex="30" />
+                     <Label text="initial_server_password=" GridPane.rowIndex="32" />
+                     <TextField fx:id="initialServerPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="32" />
+                     <ChoiceBox fx:id="initialCryptographyProviderChoiceBox" prefHeight="27.0" prefWidth="278.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <ChoiceBox fx:id="initialCryptographyKeyAlghorythmChoiceBox" prefHeight="27.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                     <ChoiceBox fx:id="initialCryptographyHashAlghorythmChoiceBox" prefHeight="27.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                     <Label prefHeight="18.0" prefWidth="561.0" text="Шаблон имени файлов сертификата и закрытого ключа сертификата Web-сервера" GridPane.columnSpan="2" GridPane.rowIndex="33" />
+                     <Label text="certificate_server_name=" GridPane.rowIndex="34" />
+                     <TextField fx:id="certificateServerNameField" GridPane.columnIndex="1" GridPane.rowIndex="34" />
+                     <Label prefHeight="18.0" prefWidth="570.0" text="Шаблон имени файла активных издателей" GridPane.columnSpan="2" GridPane.rowIndex="35" />
+                     <Label text="issuers_name=" GridPane.rowIndex="36" />
+                     <TextField fx:id="issuersNameField" GridPane.columnIndex="1" GridPane.rowIndex="36" />
+                     <ChoiceBox fx:id="initialCryptographyKeyBitsChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  </children>
+               </GridPane>
+               <GridPane fx:id="gatewayEnvPane" hgap="15" maxHeight="640.0" prefHeight="636.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true" StackPane.alignment="TOP_CENTER">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" maxWidth="272.00001525878906" minWidth="150.0" prefWidth="265.6000518798828" />
+                     <ColumnConstraints hgrow="ALWAYS" maxWidth="339.8000122070312" minWidth="272.5999847412109" prefWidth="278.99994812011715" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="max_requests_count=" GridPane.rowIndex="4" />
+                     <Label fx:id="longlabel2111211" contentDisplay="CENTER" prefHeight="54.0" prefWidth="561.0" style="-fx-font-size: 18;" text="Переменные окружения, используемые api-gateway-service" wrapText="true" GridPane.columnSpan="2">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="48.0" prefWidth="558.0" text="Максимальное число параллельных HTTP запросов" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                     <TextField fx:id="maxRequestsCountField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  </children>
+               </GridPane>
+               <GridPane fx:id="databaseConfigPane" hgap="15" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" minWidth="150" prefWidth="200" />
+                     <ColumnConstraints fillWidth="true" hgrow="ALWAYS" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="max_db_pool_size=" GridPane.rowIndex="2" />
+                     <Label styleClass="section-label" text="use_tls=" GridPane.rowIndex="4" />
+                     <Label styleClass="section-label" text="database_username=" GridPane.rowIndex="6" />
+                     <TextField fx:id="databaseUsernameField" promptText="Enter username..." GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                     <Label fx:id="longlabel12" contentDisplay="CENTER" prefHeight="18.0" prefWidth="559.0" style="-fx-font-size: 24;" text="Конфигурация базы данных" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="18.0" prefWidth="558.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                     <Label text="database_password=" GridPane.rowIndex="8" />
+                     <Label text="database_port=" GridPane.rowIndex="12" />
+                     <TextField fx:id="databasePasswordField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                     <TextField fx:id="databasePortField" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                     <TextField fx:id="maxDbPoolSizeField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     <Label GridPane.rowIndex="5" />
+                     <ChoiceBox fx:id="useTlsChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <Label text="database_name=" GridPane.rowIndex="14" />
+                     <TextField fx:id="databaseNameField" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                     <TextField fx:id="rootCertPathField" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                     <Label text="root_cert_path=" GridPane.rowIndex="16" />
+                     <TextField fx:id="databaseHostField" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                     <Label text="database_host=" GridPane.rowIndex="10" />
+                  </children>
+               </GridPane>
+               <GridPane fx:id="logsEnvPane" hgap="15" maxHeight="600.0" prefHeight="600.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" StackPane.alignment="TOP_CENTER">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" maxWidth="272.00001525878906" minWidth="150.0" prefWidth="265.6000518798828" />
+                     <ColumnConstraints hgrow="ALWAYS" maxWidth="339.8000122070312" minWidth="272.5999847412109" prefWidth="278.99994812011715" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                     <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="archive_cron=" GridPane.rowIndex="4" />
+                     <Label prefHeight="18.0" prefWidth="564.0" styleClass="section-label" text="Флаг: включена архивация" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                     <Label styleClass="section-label" text="archive_enabled=" GridPane.rowIndex="8" />
+                     <Label fx:id="longlabel21113" contentDisplay="CENTER" prefHeight="71.0" prefWidth="561.0" style="-fx-font-size: 18;" text="Переменные окружения, используемые logs-service" wrapText="true" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="18.0" prefWidth="557.0" text="CRON выражение, по которому запускается архивация журнала событий" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                     <TextField fx:id="archiveCronField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <TextField fx:id="archiveEnabledField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                     <Label prefHeight="18.0" prefWidth="564.0" styleClass="section-label" text="Архивировать записи старше (значение в мс)" GridPane.rowIndex="10" />
+                     <TextField fx:id="archiveMilisAgoField" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                     <Label styleClass="section-label" text="archive_millis_ago=" GridPane.rowIndex="12" />
+                  </children>
+               </GridPane>
+               <GridPane fx:id="allServicesEnvPane" hgap="15" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" minWidth="150.0" prefWidth="200.0" />
+                     <ColumnConstraints hgrow="ALWAYS" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="number_of_services=" GridPane.rowIndex="2" />
+                     <Label styleClass="section-label" text="logging_response=" GridPane.rowIndex="3" />
+                     <Label styleClass="section-label" text="logging_sql" GridPane.rowIndex="5" />
+                     <Label fx:id="longlabel2" contentDisplay="CENTER" prefHeight="18.0" prefWidth="559.0" style="-fx-font-size: 18;" text="НастройкиПеременные окружения, " textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="27.0" prefWidth="561.0" style="-fx-font-size: 18;" text="используемые всеми сервисами" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                     <Label text="logging_sql=" GridPane.rowIndex="7" />
+                     <Label text="logs_max_history=" GridPane.rowIndex="15" />
+                     <Label text="logs_total_size_cap=" GridPane.rowIndex="16" />
+                     <Label prefHeight="35.0" prefWidth="560.0" text="Максимальный таймаут ожидания ответа методов сервисов при внутреннем взаимодействии. Единица измерения – секунды." wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="17" />
+                     <Label text="internal_http_read_timeout=" GridPane.rowIndex="18" />
+                     <Label text="Максимальный таймаут ожидания подключения к сервисам при внутреннем взаимодействии. Единица измерения – секунды." wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="19" />
+                     <Label text="internal_http_connection_timeout=" GridPane.rowIndex="20" />
+                     <Label prefHeight="18.0" prefWidth="562.0" text="Ключ для внутренней аутентификации" GridPane.columnSpan="2" GridPane.rowIndex="21" />
+                     <TextField fx:id="logsMaxHistoryField" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                     <TextField fx:id="logsTotalSizeCapField" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                     <TextField fx:id="internalHttpReadTimeoutField" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                     <TextField fx:id="internalHttpConnectionTimeoutField" GridPane.columnIndex="1" GridPane.rowIndex="20" />
+                     <TextField fx:id="numberOfServicesField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     <Label text="api_key=" GridPane.rowIndex="22" />
+                     <TextField fx:id="apiKeyField" GridPane.columnIndex="1" GridPane.rowIndex="22" />
+                     <ChoiceBox fx:id="loggingResponseChoiceBox" prefHeight="27.0" prefWidth="156.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     <ChoiceBox fx:id="loggingSqlChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                     <Label prefHeight="18.0" prefWidth="558.0" text="Переменные окружения для logback" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+                     <TextField fx:id="logsFileMaxSizeField" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                     <Label text="logs_file_max_size" GridPane.rowIndex="13" />
+                  </children>
+               </GridPane>
+
+                    <!-- Секция Database Config -->
+                    <GridPane fx:id="webserverConfigPane" hgap="15" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true">
+
+                        <columnConstraints>
+                            <!-- Колонка для меток -->
+                            <ColumnConstraints halignment="RIGHT" minWidth="150" prefWidth="200" />
+                            <!-- Колонка для полей ввода -->
+                            <ColumnConstraints fillWidth="true" hgrow="ALWAYS" />
+                        </columnConstraints>
+
+                        <!-- Database Host -->
+                        <Label styleClass="section-label" text="webserver=" GridPane.rowIndex="2" />
+
+                        <!-- Database Port -->
+                        <Label styleClass="section-label" text="webserver_path=" GridPane.rowIndex="4" />
+                        <TextField fx:id="webserverPathField" promptText="Enter port..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                        <!-- Admin User -->
+                        <Label styleClass="section-label" text="aeca_path=" GridPane.rowIndex="5" />
+                        <TextField fx:id="aecaPathField" promptText="Enter username..." GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label fx:id="longlabel" contentDisplay="CENTER" prefHeight="18.0" prefWidth="559.0" style="-fx-font-size: 24;" text="Настройки вебсервера" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Label>
+                  <Label prefHeight="18.0" prefWidth="558.0" text="Используемый вебсервер:" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="webserverChoiseBox" prefHeight="27.0" prefWidth="342.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label prefHeight="18.0" prefWidth="575.0" text="Расположение конфигурации вебсервера:" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <Label text="environment_path=" GridPane.rowIndex="6" />
+                  <Label text="cryptotoken_path=" GridPane.rowIndex="7" />
+                  <Label text="webserver_config_path=" GridPane.rowIndex="8" />
+                  <Label text="encryption_key_path=" GridPane.rowIndex="9" />
+                  <Label text="proxy_connect_timeout=" GridPane.rowIndex="10" />
+                  <Label text="proxy_send_timeout=" GridPane.rowIndex="11" />
+                  <Label text="proxy_read_timeout=" GridPane.rowIndex="12" />
+                  <Label text="ssl_ciphers=''" GridPane.rowIndex="13" />
+                  <TextField fx:id="environmentPathField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="cryptotokenPathField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="webserverConfigPathField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField fx:id="encryptionKeyPathField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <TextField fx:id="proxyConnectTimoutField" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <TextField fx:id="proxySendTimeoutField" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <TextField fx:id="proxyReadTimeoutField" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <TextField fx:id="sslChiphersField" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <Label fx:id="parameterForNginxAndApacheLabel" prefHeight="18.0" prefWidth="562.0" text="*Параметр действует только для вебсерверов nginx и apache" GridPane.columnSpan="2" GridPane.rowIndex="14" />
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                    </GridPane>
+               <GridPane fx:id="subjectsEnvPane" hgap="15" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" maxWidth="350.0" minWidth="150.0" prefWidth="301.399951171875" />
+                     <ColumnConstraints hgrow="ALWAYS" maxWidth="339.8000122070312" minWidth="211.20005493164064" prefWidth="243.00004882812493" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label prefHeight="27.0" prefWidth="298.0" styleClass="section-label" text="ldap_automatically_certificates_publication_enable=" wrapText="true" GridPane.rowIndex="4" />
+                     <Label prefHeight="38.0" prefWidth="561.0" styleClass="section-label" text="Расписание автоматической публикации сертификатов" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                     <Label styleClass="section-label" text="ldap_automatically_certificates_publication_cron=" GridPane.rowIndex="8" />
+                     <Label fx:id="longlabel2111212" contentDisplay="CENTER" prefHeight="54.0" prefWidth="561.0" style="-fx-font-size: 18;" text="Переменные окружения, используемые subjects-service" wrapText="true" GridPane.columnSpan="2">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="48.0" prefWidth="558.0" text="Флаг включения автоматической публикации сертификатов" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                     <Label prefHeight="63.0" prefWidth="560.0" styleClass="section-label" text="CRON выражение, по которому запускается синхронизация точек подключения ресурсных систем (частичная синхронизация)" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+                     <TextField fx:id="ldapSyncConnectionPointField" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                     <Label styleClass="section-label" text="ldap_sync_connection_point=" GridPane.rowIndex="12" />
+                     <Label prefHeight="18.0" prefWidth="564.0" styleClass="section-label" text="CRON выражение, по которому запускается синхронизация ресурсных систем (полная синхронизация)" GridPane.columnSpan="2" GridPane.rowIndex="14" />
+                     <Label styleClass="section-label" text="ldap_sync_resource=" GridPane.rowIndex="16" />
+                     <Label maxHeight="82.0" prefHeight="62.0" prefWidth="560.0" styleClass="section-label" text="#CRON выражение, по которому запускается очистка необработанных элементов очередей на синхронизацию" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="18" />
+                     <Label styleClass="section-label" text="ldap_clean_queues=" GridPane.rowIndex="21" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="Максимальное количество объектов, получаемых из ресурсных систем при каждом запросе." wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="26" />
+                     <Label styleClass="section-label" text="ldap_partition_size=" GridPane.rowIndex="28" />
+                     <TextField fx:id="ldapAutomaticallyCertificatesPublicationCronField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                     <ChoiceBox fx:id="ldapAutomaticallyCertificatesPublicationEnableChoiseBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <TextField fx:id="ldapSyncResource" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                     <TextField fx:id="ldapCleanQueuesField" GridPane.columnIndex="1" GridPane.rowIndex="21" />
+                     <TextField fx:id="ldapPartitionSizeField" GridPane.columnIndex="1" GridPane.rowIndex="28" />
+                  </children>
+               </GridPane>
+               <GridPane fx:id="securityEnvPane" hgap="15" prefHeight="640.0" prefWidth="600.0" styleClass="grid-pane" stylesheets="@styles.css" vgap="10" visible="true">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" maxWidth="272.00001525878906" minWidth="150.0" prefWidth="265.6000518798828" />
+                     <ColumnConstraints hgrow="ALWAYS" maxWidth="339.8000122070312" minWidth="272.5999847412109" prefWidth="278.99994812011715" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <Label styleClass="section-label" text="session_max_count=" GridPane.rowIndex="4" />
+                     <Label prefHeight="38.0" prefWidth="561.0" styleClass="section-label" text="Время жизни JWT токена доступа в миллисекундах" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                     <Label styleClass="section-label" text="token_expire=" GridPane.rowIndex="8" />
+                     <Label fx:id="longlabel211121" contentDisplay="CENTER" prefHeight="54.0" prefWidth="561.0" style="-fx-font-size: 18;" text="Переменные окружения, используемые security-service" wrapText="true" GridPane.columnSpan="2">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Label>
+                     <Label prefHeight="48.0" prefWidth="558.0" text="Максимальное число сессий аккаунта (-1 - ограничение отключено)" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                     <Label prefHeight="50.0" prefWidth="561.0" styleClass="section-label" text="Время жизни JWT токена обновления в миллисекундах" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+                     <TextField fx:id="refreshExpireField" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                     <Label styleClass="section-label" text="refresh_expire=" GridPane.rowIndex="12" />
+                     <Label prefHeight="18.0" prefWidth="564.0" styleClass="section-label" text="Провайдер подписи" GridPane.columnSpan="2" GridPane.rowIndex="14" />
+                     <Label styleClass="section-label" text="sign_provider=" GridPane.rowIndex="16" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="Алгоритм подписи ключа" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="18" />
+                     <Label styleClass="section-label" text="sign_key_algorithm=" GridPane.rowIndex="21" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="Длина ключа подписи" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="23" />
+                     <Label styleClass="section-label" text="sign_key_length=" GridPane.rowIndex="25" />
+                     <Label maxHeight="82.0" prefHeight="46.0" prefWidth="561.0" styleClass="section-label" text="Алгоритм хэширования подписи" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="26" />
+                     <Label styleClass="section-label" text="sign_hash_algorithm=" GridPane.rowIndex="28" />
+                     <Label prefHeight="18.0" prefWidth="564.0" text="Для блокировки неактивных аккаунтов в милисекундах" GridPane.columnSpan="2" GridPane.rowIndex="30" />
+                     <Label text="block_inactive_account_delay=" GridPane.rowIndex="32" />
+                     <TextField fx:id="blockInnactiveAccountDelayField" GridPane.columnIndex="1" GridPane.rowIndex="32" />
+                     <ChoiceBox fx:id="signProviderChoiceBox" prefHeight="27.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                     <Label prefHeight="18.0" prefWidth="561.0" text="CRON выражение, по которому запускается блокировка неактивных аккаунтов" GridPane.columnSpan="2" GridPane.rowIndex="33" />
+                     <Label text="block_inactive_account_cron=" GridPane.rowIndex="34" />
+                     <TextField fx:id="blockInnactiveAccountCronField" GridPane.columnIndex="1" GridPane.rowIndex="34" />
+                     <TextField fx:id="sessionMaxCountField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <TextField fx:id="tokenExpireField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                     <ChoiceBox fx:id="signKeyAlgorithmChoiceBox" prefHeight="27.0" prefWidth="271.0" GridPane.columnIndex="1" GridPane.rowIndex="21" />
+                     <ChoiceBox fx:id="signHashAlgorithmChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="28" />
+                     <ChoiceBox fx:id="signKeyLengthChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="25" />
+                  </children>
+               </GridPane>
+
+                </StackPane>
+            </content>
+        </ScrollPane>
+   </right>
+</BorderPane>

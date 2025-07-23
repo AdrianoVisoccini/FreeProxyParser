@@ -7,13 +7,13 @@ import com.Javacode.test.dto.WalletRequest;
 import com.Javacode.test.model.Wallet;
 import com.Javacode.test.repository.WalletRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
-@Component
+@Service
 public class WalletServiceImpl implements WalletService{
 
     private WalletRepository walletRepository;

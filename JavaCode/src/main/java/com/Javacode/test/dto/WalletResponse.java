@@ -9,7 +9,10 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 public class WalletResponse {
+
     private UUID walletId;
+
     private BigDecimal balance;
+
     private String message;
 }
